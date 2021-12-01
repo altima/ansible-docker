@@ -1,3 +1,13 @@
-FROM centos
-#RUN yum update -y && yum install epel-release -y && yum install ansible pyyaml openssh -y && yum clean all
-RUN yum update -y && yum install epel-release -y && yum install ansible python3-pyyaml openssh -y && yum clean all
+FROM ubuntu:latest
+
+# prepare
+RUN apt update && \
+    apt install -y \
+        software-properties-common
+
+# add & install ansible
+RUN add-apt-repository --yes --update ppa:ansible/ansible
+RUN apt install -y \
+        ansible \
+        openssh \
+        python3-pyyaml
