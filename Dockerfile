@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ Europe/Berlin
+
 # prepare
 RUN apt update && \
     apt install -y \
