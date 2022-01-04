@@ -12,6 +12,3 @@ RUN apt update && \
 RUN add-apt-repository --yes --update ppa:ansible/ansible
 RUN apt install -y \
         ansible
-
-# ansible addons
-RUN ansible-galaxy install geerlingguy.docker
